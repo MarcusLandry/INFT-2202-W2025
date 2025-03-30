@@ -1,0 +1,31 @@
+/* Custom styles to enhance Bootstrap */
+body {
+    background-color: #f8f9fa;
+}
+
+/* Card enhancements */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-title {
+    color: #343a40;
+    font-weight: 600;
+}
+
+.card-text {
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+/* Custom container width for better readability */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
