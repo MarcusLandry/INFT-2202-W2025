@@ -1,0 +1,50 @@
+<div class="row mb-4">
+    <div class="col">
+        <a href="/animals/new" class="btn btn-success">Add New Animal</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        {{#if animals.length}}
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Zoo</th>
+                        <th>Scientific Name</th>
+                        <th>Common Name</th>
+                        <th>Given Name</th>
+                        <th>Gender</th>
+                        <th>Date of Birth</th>
+                        <th>Age</th>
+                        <th>Transportable</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each animals}}
+                    <tr>
+                        <td>{{this.zoo}}</td>
+                        <td>{{this.scientificName}}</td>
+                        <td>{{this.commonName}}</td>
+                        <td>{{this.givenName}}</td>
+                        <td>{{this.gender}}</td>
+                        <td>{{formatDate this.dateOfBirth}}</td>
+                        <td>{{this.age}}</td>
+                        <td>{{#if this.isTransportable}}Yes{{else}}No{{/if}}</td>
+                        <td>
+                            <a href="/animals/edit/{{this._id}}" class="btn btn-sm btn-primary">Edit</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        {{else}}
+        <div class="alert alert-info">
+            No animals found in the database. <a href="/animals/new">Add one now</a>!
+        </div>
+        {{/if}}
+    </div>
+</div>
